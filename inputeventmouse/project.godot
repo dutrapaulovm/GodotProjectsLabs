@@ -10,7 +10,6 @@ config_version=5
 
 [application]
 
-config/name="GlobalPosition-LocalPosition"
-run/main_scene="res://Scene/world.tscn"
+config/name="InputEventMouse"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
