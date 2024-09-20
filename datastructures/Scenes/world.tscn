@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://3yggx15ememt"]
+
+[ext_resource type="Script" path="res://Scripts/World.gd" id="1_ami1l"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_ami1l")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 298.0
+offset_bottom = 85.0
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 162.0
+offset_bottom = 33.0
+text = "Adicionar Elemento"
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

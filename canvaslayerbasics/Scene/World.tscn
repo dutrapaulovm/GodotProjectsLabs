@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxl6h153nadyj"]
+
+[ext_resource type="Texture2D" uid="uid://c8cf4bp40yqvn" path="res://icon.svg" id="1_ofl08"]
+[ext_resource type="Script" path="res://Scripts/World.gd" id="1_q73q7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2yxtk"]
+font_size = 60
+
+[node name="Word" type="Node2D"]
+script = ExtResource("1_q73q7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(832, 320)
+texture = ExtResource("1_ofl08")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(640, 448)
+texture = ExtResource("1_ofl08")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(192, 128)
+texture = ExtResource("1_ofl08")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(1088, 512)
+texture = ExtResource("1_ofl08")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(640, 128)
+texture = ExtResource("1_ofl08")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(256, 448)
+texture = ExtResource("1_ofl08")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+position = Vector2(1088, 128)
+texture = ExtResource("1_ofl08")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 320)
+
+[node name="Label1" type="Label" parent="."]
+offset_left = 576.0
+offset_top = 192.0
+offset_right = 970.0
+offset_bottom = 384.0
+text = "Fora do Layer"
+label_settings = SubResource("LabelSettings_2yxtk")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 383.0
+offset_bottom = 192.0
+text = "Canvas Layer"
+label_settings = SubResource("LabelSettings_2yxtk")
