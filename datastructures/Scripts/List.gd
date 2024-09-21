@@ -1,16 +1,19 @@
-class_name List extends Node
+class_name List extends Object
 
 var elements:Array = Array()
 var nsize = 0
-var ncapacity = 5
+var max_capacity = 5
 
 func _init() -> void:
 	print("inicie")
 	initialize()
 
 func capacity() -> int:
-	return ncapacity
-			
+	return max_capacity
+	
+func empyt() -> bool:
+	return size() == 0
+	
 func size() -> int:
 	return nsize
 	
@@ -22,27 +25,30 @@ func resize() -> void:
 	elements = aux
 
 func initialize() -> void:	
-	elements.resize(ncapacity)
+	elements.resize(max_capacity)
 
-func add(element:Variant):	
-	if nsize < ncapacity:
-		elements[nsize] = element		
-	else:
+func add(item:Variant):	
+	if nsize+1 >= max_capacity:
 		grow()
-		elements[nsize] = element
-	
+					
+	elements[nsize] = item
 	nsize += 1	
 
+#Aumenta o tamanho do vetor
 func grow():
 	#Define um novo valor para capacidade maxima, aplicando um fator de ajuste 
-	var pref_capacity:int = nsize + (ncapacity + ncapacity) / 2
-	ncapacity += pref_capacity + 1
+	var new_capacity:int = nsize + max_capacity
+	max_capacity += new_capacity + 2
+	
+	#Define um novo vetor de acordo com a nova capacidade máxima
 	var new_vector:Array = []
-	new_vector.resize(ncapacity)
+	new_vector.resize(max_capacity)
+	
+	#Copiando os elementos para o novo vetor
 	for i in range(nsize):
 		new_vector[i] = elements[i]
-	
-	elements = new_vector	
+
+	elements = new_vector
 
 func get_element(index:int) -> Variant:
 	if index >= 0 and index < size():
