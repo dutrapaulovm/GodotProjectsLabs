@@ -6,6 +6,4 @@ Aqui você encontrará diversos exemplos de projetos desenvolvidos na engine de 
 
 ## Descrição dos projetos.
 
-### GlobalPosition-LocalPosition 
-
-Neste exemplo é demonstrado a diferença entre GlobalPosition e LocalPosition
+-- GlobalPosition-LocalPosition : Neste exemplo é demonstrado a diferença entre GlobalPosition e LocalPosition
