@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0kayhlorwcwy"]
+
+[ext_resource type="Script" path="res://Behaviors/ScoreBehavior.gd" id="1_wlyir"]
+
+[node name="ScoreBehavior" type="Node"]
+script = ExtResource("1_wlyir")

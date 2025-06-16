@@ -6,7 +6,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:		
-	var angle = rad_to_deg(get_angle_to(get_global_mouse_position()))		
+	pass
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		# Verifica se o evento executado é do tipo InputEventMouseButton e se foi

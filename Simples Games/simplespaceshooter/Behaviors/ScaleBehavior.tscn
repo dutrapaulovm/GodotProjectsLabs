@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://brpe1spb7coor"]
+
+[ext_resource type="Script" path="res://Behaviors/ScaleBehavior.gd" id="1_3ae1d"]
+
+[node name="ScaleBehavior" type="Node"]
+script = ExtResource("1_3ae1d")

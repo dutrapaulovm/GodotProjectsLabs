@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://c41sg4iiwm13r"]
+
+[ext_resource type="Script" path="res://Scripts/ParallaxBackground.gd" id="1_12ry7"]
+[ext_resource type="Texture2D" uid="uid://dytm26f0q2w8u" path="res://Assets/Backgrounds/purple.png" id="1_nmp0v"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wbt66"]
+font_size = 32
+
+[node name="Background" type="Node2D"]
+position = Vector2(0, -128)
+script = ExtResource("1_12ry7")
+
+[node name="Background01" type="TextureRect" parent="."]
+offset_top = 128.0
+offset_right = 540.0
+offset_bottom = 1088.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("1_nmp0v")
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="Background01"]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 23.0
+text = "000000"
+label_settings = SubResource("LabelSettings_wbt66")
+
+[node name="Background02" type="TextureRect" parent="."]
+offset_top = -832.0
+offset_right = 540.0
+offset_bottom = 128.0
+texture = ExtResource("1_nmp0v")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Background02"]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 23.0

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq6mnoq6h1vi1"]
+
+[ext_resource type="PackedScene" uid="uid://bwas8qaevj0om" path="res://Prefabs/PlayerShipBlue.tscn" id="1_617sw"]
+[ext_resource type="Script" path="res://Scripts/World.gd" id="1_ya634"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_ya634")
+
+[node name="PlayerShipBlue" parent="." instance=ExtResource("1_617sw")]
+position = Vector2(464, 224)

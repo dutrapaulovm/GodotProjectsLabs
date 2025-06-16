@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyu4rmegb11av"]
+
+[ext_resource type="Script" path="res://Behaviors/MovementGrid.gd" id="1_rt2y3"]
+
+[node name="MovementGrid" type="Node"]
+script = ExtResource("1_rt2y3")

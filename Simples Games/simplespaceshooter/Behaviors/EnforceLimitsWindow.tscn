@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6nmtmtpgkngg"]
+
+[ext_resource type="Script" path="res://Behaviors/EnforceLimitsWindow.gd" id="1_kgrde"]
+
+[node name="EnforceLimitsWindow" type="Node"]
+script = ExtResource("1_kgrde")

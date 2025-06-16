@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://bw4nmo1ycfpca"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_dv7gp"]
+[ext_resource type="Texture2D" uid="uid://cnl0v8upe845p" path="res://Assets/playerShip2_red.png" id="2_rs467"]
+[ext_resource type="PackedScene" uid="uid://bpyd1sca75dmr" path="res://Behaviors/FireBullet.tscn" id="3_4ihln"]
+[ext_resource type="PackedScene" uid="uid://b43imn68c053f" path="res://Prefabs/LaserRed.tscn" id="4_4bpgb"]
+[ext_resource type="PackedScene" uid="uid://c6nmtmtpgkngg" path="res://Behaviors/EnforceLimitsWindow.tscn" id="5_b3yd5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rewka"]
+size = Vector2(96, 56)
+
+[node name="Ship" type="Area2D"]
+collision_layer = 4
+collision_mask = 18
+script = ExtResource("1_dv7gp")
+
+[node name="PointShooter" type="Marker2D" parent="."]
+position = Vector2(0, -32)
+
+[node name="PlayerShip2Red" type="Sprite2D" parent="."]
+texture = ExtResource("2_rs467")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_rewka")
+
+[node name="fire_rate" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="FireBullet" parent="." node_paths=PackedStringArray("point_shooter") instance=ExtResource("3_4ihln")]
+point_shooter = NodePath("../PointShooter")
+bullet_resource = ExtResource("4_4bpgb")
+
+[node name="EnforceLimitsWindow" parent="." node_paths=PackedStringArray("object") instance=ExtResource("5_b3yd5")]
+offset = Vector2(64, 64)
+object = NodePath("..")
+
+[connection signal="timeout" from="fire_rate" to="." method="_on_fire_rate_timeout"]

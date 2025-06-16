@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2oj0mevv6c6q"]
+
+[ext_resource type="Texture2D" uid="uid://c2ykyrt6nrpox" path="res://origin.png" id="1_8paud"]
+[ext_resource type="Script" path="res://Scripts/World.gd" id="1_r3o31"]
+[ext_resource type="Texture2D" uid="uid://cpn86s07rhlkq" path="res://target.png" id="2_wggw4"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_r3o31")
+
+[node name="SpriteOrigin" type="Sprite2D" parent="."]
+position = Vector2(128, 128)
+texture = ExtResource("1_8paud")
+
+[node name="SpriteTarget" type="Sprite2D" parent="."]
+position = Vector2(448, 256)
+texture = ExtResource("2_wggw4")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MagnitudeLabel" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 32.0
+offset_right = 320.0
+offset_bottom = 23.0
+text = "Magnetude: "
+
+[node name="AngleLabel" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = -16.0
+offset_right = 268.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Angle:
+"

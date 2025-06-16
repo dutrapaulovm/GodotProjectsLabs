@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://bnntpg5e0al06"]
+
+[ext_resource type="Script" path="res://Scripts/EnemyShip.gd" id="1_cg71r"]
+[ext_resource type="Texture2D" uid="uid://csl07glfgsyhn" path="res://Assets/PNG/Enemies/enemyGreen1.png" id="2_scj6c"]
+[ext_resource type="PackedScene" uid="uid://bytcdj2wjkitt" path="res://Behaviors/EllipseMovement.tscn" id="3_0xhug"]
+[ext_resource type="PackedScene" uid="uid://di46u4gqyeuxa" path="res://Behaviors/LinearMovement.tscn" id="3_caa5n"]
+[ext_resource type="PackedScene" uid="uid://d04g6s5x2wblp" path="res://Behaviors/ShakeObject.tscn" id="4_80560"]
+[ext_resource type="PackedScene" uid="uid://brpe1spb7coor" path="res://Behaviors/ScaleBehavior.tscn" id="5_v8kju"]
+[ext_resource type="AudioStream" uid="uid://unysfvnsunem" path="res://SoundFX/sfx_explosion.wav" id="7_sypb8"]
+
+[node name="EnemyShip" type="Area2D"]
+collision_layer = 2
+collision_mask = 12
+script = ExtResource("1_cg71r")
+
+[node name="PlayerShip1Green" type="Sprite2D" parent="."]
+texture = ExtResource("2_scj6c")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-12, -32, -28, -40, -44, -16, -24, 40, -12, 36, -16, 16, 16, 16, 12, 36, 24, 40, 44, -16, 28, -40, 12, -32, 8, -24, -8, -24)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, -28)
+scale = Vector2(3.15, 1.5)
+
+[node name="Behaviors" type="Node2D" parent="."]
+
+[node name="EllipseMovement" parent="Behaviors" node_paths=PackedStringArray("object") instance=ExtResource("3_0xhug")]
+radius_movement = Vector2(20, 0)
+object = NodePath("../..")
+loop_duration = 2.0
+
+[node name="ShakeObject" parent="Behaviors" node_paths=PackedStringArray("object") instance=ExtResource("4_80560")]
+object = NodePath("../../PlayerShip1Green")
+
+[node name="ScaleBehavior" parent="Behaviors" node_paths=PackedStringArray("sprite") instance=ExtResource("5_v8kju")]
+sprite = NodePath("../../PlayerShip1Green")
+scale_amount = Vector2(1.3, 1.3)
+scale_duration = 0.4
+
+[node name="LinearMovement" parent="Behaviors" node_paths=PackedStringArray("object") instance=ExtResource("3_caa5n")]
+object = NodePath("../..")
+speed = Vector2(0, 100)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_sypb8")
+volume_db = 5.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

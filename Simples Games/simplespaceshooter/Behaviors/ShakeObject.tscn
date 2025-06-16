@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d04g6s5x2wblp"]
+
+[ext_resource type="Script" path="res://Behaviors/ShakeObject.gd" id="1_lakc1"]
+
+[node name="ShakeObject" type="Node"]
+script = ExtResource("1_lakc1")

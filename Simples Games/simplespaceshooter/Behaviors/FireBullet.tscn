@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpyd1sca75dmr"]
+
+[ext_resource type="Script" path="res://Behaviors/FireBullet.gd" id="1_t40dq"]
+
+[node name="FireBullet" type="Node"]
+script = ExtResource("1_t40dq")
+
+[node name="FireRateTimer" type="Timer" parent="."]

@@ -11,7 +11,7 @@ func _init() -> void:
 func capacity() -> int:
 	return max_capacity
 	
-func empyt() -> bool:
+func empty() -> bool:
 	return size() == 0
 	
 func size() -> int:
@@ -36,9 +36,9 @@ func add(item:Variant):
 
 #Aumenta o tamanho do vetor
 func grow():
-	#Define um novo valor para capacidade maxima, aplicando um fator de ajuste 
-	var new_capacity:int = nsize + max_capacity
-	max_capacity += new_capacity + 2
+	#Define um novo valor para capacidade maxima, aplicando um fator de ajuste
+	var new_capacity:int = max_capacity + round(max_capacity / 2)
+	max_capacity = new_capacity + 2
 	
 	#Define um novo vetor de acordo com a nova capacidade máxima
 	var new_vector:Array = []

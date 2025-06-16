@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bytcdj2wjkitt"]
+
+[ext_resource type="Script" path="res://Behaviors/EllipseMovement.gd" id="1_5vf6l"]
+
+[node name="EllipseMovement" type="Node"]
+script = ExtResource("1_5vf6l")

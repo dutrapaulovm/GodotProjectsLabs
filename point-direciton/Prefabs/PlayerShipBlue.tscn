@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwas8qaevj0om"]
+
+[ext_resource type="Texture2D" uid="uid://iasbftbl4tfl" path="res://Assets/playerShip1_blue.png" id="1_7ft3q"]
+[ext_resource type="Script" path="res://Scripts/PlayerShipBlue.gd" id="2_8yy3r"]
+
+[node name="PlayerShipBlue" type="Node2D"]
+script = ExtResource("2_8yy3r")
+
+[node name="PlayerShip1Blue" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("1_7ft3q")

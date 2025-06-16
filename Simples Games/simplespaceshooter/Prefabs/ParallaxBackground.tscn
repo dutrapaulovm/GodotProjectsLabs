@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c41sg4iiwm13r"]
+
+[ext_resource type="Script" path="res://Scripts/Background.gd" id="1_12ry7"]
+[ext_resource type="Texture2D" uid="uid://dytm26f0q2w8u" path="res://Assets/Backgrounds/purple.png" id="1_nmp0v"]
+
+[node name="Background" type="ParallaxBackground"]
+script = ExtResource("1_12ry7")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(0, 648)
+
+[node name="Background01" type="TextureRect" parent="ParallaxLayer"]
+offset_right = 1280.0
+offset_bottom = 768.0
+texture = ExtResource("1_nmp0v")
+stretch_mode = 1

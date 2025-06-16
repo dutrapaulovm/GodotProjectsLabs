@@ -4,11 +4,8 @@ var elements = []
 var nsize: = 0
 var max_capacity = 10
 
-func _ready() -> void:
-	pass # Replace with function body.
-
-func _process(delta: float) -> void:
-	pass
+func _init() -> void:
+	elements.resize(max_capacity)
 
 #Retorna o último elemento da lista sem remover o elemento
 func peek() -> Variant:
@@ -27,7 +24,7 @@ func push(item:Variant):
 			
 #Remove o elemento do top da lista e retorna esse elemento
 func pop() -> Variant:
-	var item
+	var item:Variant = null
 	if nsize > 0:
 		item = elements[nsize - 1]
 		elements[nsize - 1] = null
@@ -37,9 +34,9 @@ func pop() -> Variant:
 #Aumenta o tamanho do vetor
 func grow():
 	#Define um novo valor para capacidade maxima, aplicando um fator de ajuste 
-	var new_capacity:int = nsize + max_capacity
+	var new_capacity:int = nsize + (max_capacity / 2)
 	max_capacity += new_capacity + 2
-	
+		
 	#Define um novo vetor de acordo com a nova capacidade máxima
 	var new_vector:Array = []
 	new_vector.resize(max_capacity)
